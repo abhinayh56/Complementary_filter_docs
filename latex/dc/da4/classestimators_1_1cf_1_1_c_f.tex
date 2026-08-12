@@ -1,0 +1,450 @@
+\doxysection{estimators::\+cf::\+CF\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classestimators_1_1cf_1_1_c_f}{}\label{classestimators_1_1cf_1_1_c_f}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+
+
+Generic complementary filter for sensor fusion.  
+
+
+
+
+{\ttfamily \+\#include $<$cf.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_ace0babe997ee52d6734f99e261e4fe45}{CF}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a complementary filter. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a73e7035204b63a7acd2e10c26f208e90}{\texorpdfstring{$\sim$}{\string~}\+CF}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the complementary filter. \end{DoxyCompactList}\item 
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_aed9d82342fb263c95a908e8da463d54a}{get\+\_\+alpha}} ()
+\begin{DoxyCompactList}\small\item\em Gets the complementary filter coefficient. \end{DoxyCompactList}\item 
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_ae6b29e24d3b616b041dcb891a3cb5407}{get\+\_\+dt}} ()
+\begin{DoxyCompactList}\small\item\em Gets the sampling time. \end{DoxyCompactList}\item 
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_affded7eba4995b1539d8063011e7891f}{get\+\_\+fc}} ()
+\begin{DoxyCompactList}\small\item\em Gets the cutoff frequency. \end{DoxyCompactList}\item 
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_ad6f0d07e6f90f3581017fa10201ea595}{get\+\_\+tau}} ()
+\begin{DoxyCompactList}\small\item\em Gets the filter time constant. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a14bd70ca761ec738b91c0741adc82e25}{init}} (T fc\+\_\+, T dt\+\_\+)
+\begin{DoxyCompactList}\small\item\em Initializes the complementary filter. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a87486f9d50bd8e271470e235652b1385}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the filter state. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a773714b26cec336c76de1091559cf669}{set\+\_\+alpha}} (T alpha\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the complementary filter coefficient. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_aa91caa6e98279009114e53711e0d8640}{set\+\_\+dt}} (T dt\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the sampling time. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a528d026c8354faf6a42bdb4dffaa15fe}{set\+\_\+fc}} (T fc\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the cutoff frequency. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a621de096f705386d27ee0aa84a9b26e7}{set\+\_\+param}} (T fc\+\_\+, T dt\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the filter parameters. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_af117cecc64571370751a762ee21576ab}{set\+\_\+tau}} (T tau\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the filter time constant. \end{DoxyCompactList}\item 
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a132213434f27db6c900bfbda44a6b421}{update}} (T x1\+\_\+i, T x2\+\_\+i)
+\begin{DoxyCompactList}\small\item\em Updates the complementary filter with new measurements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a590982c7f6b37c0102356da368560990}{alpha}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Complementary filter coefficient. \end{DoxyCompactList}\item 
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a35441d10d97c64c8938beb8e7b4e9bbd}{dt}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Sampling time or control-\/loop period. \end{DoxyCompactList}\item 
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a4579d6f2576dd55c7a4ce4f8df9782f7}{fc}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Cutoff frequency of the filter. \end{DoxyCompactList}\item 
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a5ebd15ab923a69482cc5f8d57a4665b1}{tau}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Time constant of the filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class estimators::\+cf::\+\+CF$<$ T $>$}
+Generic complementary filter for sensor fusion. 
+
+The \doxylink{classestimators_1_1cf_1_1_c_f}{CF} class implements a first-\/order complementary filter that combines two input measurements into a single filtered output.
+
+The filter can be configured using either the cutoff frequency and sampling time or directly using the filter parameters.
+
+The class is templated so that the filter can operate on different numeric types such as {\ttfamily float} or {\ttfamily double}.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Numeric data type used for the filter calculations.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyParagraph}{Typical usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{estimators::cf::CF<double>\ filter;}
+\DoxyCodeLine{}
+\DoxyCodeLine{filter.\doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a14bd70ca761ec738b91c0741adc82e25}{init}}(2.5,\ 0.006);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ output\ =\ filter.\doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_a132213434f27db6c900bfbda44a6b421}{update}}(x1,\ x2);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00069}{69}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+
+
+\label{classestimators_1_1cf_1_1_c_f_doc-constructors}
+\Hypertarget{classestimators_1_1cf_1_1_c_f_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classestimators_1_1cf_1_1_c_f_ace0babe997ee52d6734f99e261e4fe45}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!CF@{CF}}
+\index{CF@{CF}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{CF()}{CF()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_ace0babe997ee52d6734f99e261e4fe45} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+\+CF (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a complementary filter. 
+
+The filter parameters are initialized to zero. Use \doxylink{classestimators_1_1cf_1_1_c_f_a14bd70ca761ec738b91c0741adc82e25}{init()} or the individual setter functions to configure the filter before using \doxylink{classestimators_1_1cf_1_1_c_f_a132213434f27db6c900bfbda44a6b421}{update()}. 
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00005}{5}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{dc/da4/classestimators_1_1cf_1_1_c_f_ace0babe997ee52d6734f99e261e4fe45_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classestimators_1_1cf_1_1_c_f_a73e7035204b63a7acd2e10c26f208e90}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!````~CF@{\texorpdfstring{$\sim$}{\string~}CF}}
+\index{````~CF@{\texorpdfstring{$\sim$}{\string~}CF}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CF()}{\string~CF()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_a73e7035204b63a7acd2e10c26f208e90} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+\texorpdfstring{$\sim$}{\string~}\doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f_ace0babe997ee52d6734f99e261e4fe45}{CF}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destroys the complementary filter. 
+
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00010}{10}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+
+
+\label{classestimators_1_1cf_1_1_c_f_doc-func-members}
+\Hypertarget{classestimators_1_1cf_1_1_c_f_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classestimators_1_1cf_1_1_c_f_aed9d82342fb263c95a908e8da463d54a}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!get\_alpha@{get\_alpha}}
+\index{get\_alpha@{get\_alpha}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_alpha()}{get\_alpha()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_aed9d82342fb263c95a908e8da463d54a} 
+template$<$typename T$>$ \\
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+get\+\_\+alpha (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the complementary filter coefficient. 
+
+\begin{DoxyReturn}{Returns}
+Current complementary filter coefficient. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00087}{87}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_ae6b29e24d3b616b041dcb891a3cb5407}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!get\_dt@{get\_dt}}
+\index{get\_dt@{get\_dt}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_dt()}{get\_dt()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_ae6b29e24d3b616b041dcb891a3cb5407} 
+template$<$typename T$>$ \\
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+get\+\_\+dt (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the sampling time. 
+
+\begin{DoxyReturn}{Returns}
+Current sampling time or control-\/loop period. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00081}{81}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_affded7eba4995b1539d8063011e7891f}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!get\_fc@{get\_fc}}
+\index{get\_fc@{get\_fc}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_fc()}{get\_fc()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_affded7eba4995b1539d8063011e7891f} 
+template$<$typename T$>$ \\
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+get\+\_\+fc (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the cutoff frequency. 
+
+\begin{DoxyReturn}{Returns}
+Current cutoff frequency. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00069}{69}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{dc/da4/classestimators_1_1cf_1_1_c_f_affded7eba4995b1539d8063011e7891f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classestimators_1_1cf_1_1_c_f_ad6f0d07e6f90f3581017fa10201ea595}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!get\_tau@{get\_tau}}
+\index{get\_tau@{get\_tau}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_tau()}{get\_tau()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_ad6f0d07e6f90f3581017fa10201ea595} 
+template$<$typename T$>$ \\
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+get\+\_\+tau (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the filter time constant. 
+
+\begin{DoxyReturn}{Returns}
+Current filter time constant. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00075}{75}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_a14bd70ca761ec738b91c0741adc82e25}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!init@{init}}
+\index{init@{init}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_a14bd70ca761ec738b91c0741adc82e25} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+init (\begin{DoxyParamCaption}\item[{T}]{fc\+\_\+}{, }\item[{T}]{dt\+\_\+}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the complementary filter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em fc\+\_\+} & Cutoff frequency of the filter. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em dt\+\_\+} & Sampling time or control-\/loop period.\\
+\hline
+\end{DoxyParams}
+This function initializes the filter parameters using the specified cutoff frequency and sampling time. 
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00015}{15}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_a87486f9d50bd8e271470e235652b1385}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!reset@{reset}}
+\index{reset@{reset}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_a87486f9d50bd8e271470e235652b1385} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Resets the filter state. 
+
+Resets the internal state of the filter to its initial condition. 
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00036}{36}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_a773714b26cec336c76de1091559cf669}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!set\_alpha@{set\_alpha}}
+\index{set\_alpha@{set\_alpha}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_alpha()}{set\_alpha()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_a773714b26cec336c76de1091559cf669} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+set\+\_\+alpha (\begin{DoxyParamCaption}\item[{T}]{alpha\+\_\+}{}\end{DoxyParamCaption})}
+
+
+
+Sets the complementary filter coefficient. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em alpha\+\_\+} & Complementary filter coefficient. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00061}{61}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_aa91caa6e98279009114e53711e0d8640}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!set\_dt@{set\_dt}}
+\index{set\_dt@{set\_dt}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_dt()}{set\_dt()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_aa91caa6e98279009114e53711e0d8640} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+set\+\_\+dt (\begin{DoxyParamCaption}\item[{T}]{dt\+\_\+}{}\end{DoxyParamCaption})}
+
+
+
+Sets the sampling time. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em dt\+\_\+} & Sampling time or control-\/loop period. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00055}{55}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_a528d026c8354faf6a42bdb4dffaa15fe}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!set\_fc@{set\_fc}}
+\index{set\_fc@{set\_fc}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_fc()}{set\_fc()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_a528d026c8354faf6a42bdb4dffaa15fe} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+set\+\_\+fc (\begin{DoxyParamCaption}\item[{T}]{fc\+\_\+}{}\end{DoxyParamCaption})}
+
+
+
+Sets the cutoff frequency. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em fc\+\_\+} & Cutoff frequency of the filter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00041}{41}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_a621de096f705386d27ee0aa84a9b26e7}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!set\_param@{set\_param}}
+\index{set\_param@{set\_param}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_param()}{set\_param()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_a621de096f705386d27ee0aa84a9b26e7} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+set\+\_\+param (\begin{DoxyParamCaption}\item[{T}]{fc\+\_\+}{, }\item[{T}]{dt\+\_\+}{}\end{DoxyParamCaption})}
+
+
+
+Sets the filter parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em fc\+\_\+} & Cutoff frequency of the filter. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em dt\+\_\+} & Sampling time or control-\/loop period.\\
+\hline
+\end{DoxyParams}
+This function configures the cutoff frequency and sampling time of the complementary filter. 
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00021}{21}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_af117cecc64571370751a762ee21576ab}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!set\_tau@{set\_tau}}
+\index{set\_tau@{set\_tau}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_tau()}{set\_tau()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_af117cecc64571370751a762ee21576ab} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+set\+\_\+tau (\begin{DoxyParamCaption}\item[{T}]{tau\+\_\+}{}\end{DoxyParamCaption})}
+
+
+
+Sets the filter time constant. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em tau\+\_\+} & Time constant of the filter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00047}{47}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_a132213434f27db6c900bfbda44a6b421}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!update@{update}}
+\index{update@{update}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_a132213434f27db6c900bfbda44a6b421} 
+template$<$typename T$>$ \\
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+update (\begin{DoxyParamCaption}\item[{T}]{x1\+\_\+i}{, }\item[{T}]{x2\+\_\+i}{}\end{DoxyParamCaption})}
+
+
+
+Updates the complementary filter with new measurements. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em x1\+\_\+i} & First sensor measurement. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em x2\+\_\+i} & Second sensor measurement.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Filtered or fused output.
+\end{DoxyReturn}
+Combines the two input measurements according to the complementary filter equation and updates the internal filter state. 
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00030}{30}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+
+
+\label{classestimators_1_1cf_1_1_c_f_doc-variable-members}
+\Hypertarget{classestimators_1_1cf_1_1_c_f_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classestimators_1_1cf_1_1_c_f_a590982c7f6b37c0102356da368560990}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!alpha@{alpha}}
+\index{alpha@{alpha}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_a590982c7f6b37c0102356da368560990} 
+template$<$typename T$>$ \\
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+alpha = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Complementary filter coefficient. 
+
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00210}{210}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_a35441d10d97c64c8938beb8e7b4e9bbd}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!dt@{dt}}
+\index{dt@{dt}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{dt}{dt}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_a35441d10d97c64c8938beb8e7b4e9bbd} 
+template$<$typename T$>$ \\
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+dt = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sampling time or control-\/loop period. 
+
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00205}{205}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_a4579d6f2576dd55c7a4ce4f8df9782f7}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!fc@{fc}}
+\index{fc@{fc}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fc}{fc}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_a4579d6f2576dd55c7a4ce4f8df9782f7} 
+template$<$typename T$>$ \\
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+fc = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cutoff frequency of the filter. 
+
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00195}{195}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+\Hypertarget{classestimators_1_1cf_1_1_c_f_a5ebd15ab923a69482cc5f8d57a4665b1}\index{estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}!tau@{tau}}
+\index{tau@{tau}!estimators::cf::CF$<$ T $>$@{estimators::cf::CF$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{tau}{tau}}
+{\footnotesize\ttfamily \label{classestimators_1_1cf_1_1_c_f_a5ebd15ab923a69482cc5f8d57a4665b1} 
+template$<$typename T$>$ \\
+T \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF}}$<$ T $>$::\+tau = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time constant of the filter. 
+
+
+
+Definition at line \doxymbox{\hyperlink{cf_8h_source_l00200}{200}} of file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{cf_8h}{cf.\+h}}\item 
+src/\+\doxymbox{\hyperlink{cf_8tpp}{cf.\+tpp}}\end{DoxyCompactItemize}

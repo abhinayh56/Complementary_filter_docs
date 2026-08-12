@@ -1,0 +1,65 @@
+\doxysection{include/\+cf.h File Reference}
+\hypertarget{cf_8h}{}\label{cf_8h}\index{include/cf.h@{include/cf.h}}
+
+
+Declaration of the complementary filter class.  
+
+
+{\ttfamily \+\#include "{}CF.\+tpp"{}}\newline
+Include dependency graph for cf.\+h:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{d2/d69/cf_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{d6/dfc/cf_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Generic complementary filter for sensor fusion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespacecf}{cf}}
+\begin{DoxyCompactList}\small\item\em Contains the complementary filter implementation. \end{DoxyCompactList}\item 
+namespace \doxymbox{\hyperlink{namespaceestimators}{estimators}}
+\begin{DoxyCompactList}\small\item\em Contains estimation and sensor-\/fusion algorithms. \end{DoxyCompactList}\item 
+namespace \doxymbox{\hyperlink{namespaceestimators_1_1cf}{estimators::\+cf}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the complementary filter class. 
+
+\begin{DoxyAuthor}{Author}
+Abhinay Kumar 
+\end{DoxyAuthor}
+This file defines the \doxylink{classestimators_1_1cf_1_1_c_f}{estimators::\+cf::\+\+CF} class, which implements a complementary filter for sensor fusion.
+
+A complementary filter combines measurements from different sensors by exploiting their complementary frequency characteristics. For example, a low-\/frequency measurement from one sensor can be combined with a high-\/frequency measurement from another sensor to obtain a more stable estimate.
+
+The filter parameters are defined by the cutoff frequency, time step, time constant, and filter coefficient.
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2026-\/08-\/11
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2026 Abhinay Kumar 
+\end{DoxyCopyright}
+
+
+Definition in file \doxymbox{\hyperlink{cf_8h_source}{cf.\+h}}.
+
