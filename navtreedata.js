@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Complementary Filter", "index.html", [
+    [ "Complementary Filter Library", "index.html", "index" ],
     [ "Complementary_filter", "d3/dcc/md__r_e_a_d_m_e.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]

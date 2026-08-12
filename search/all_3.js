@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['estimators_0',['estimators',['../d2/dba/namespaceestimators.html',1,'']]],
-  ['estimators_3a_3acf_1',['cf',['../d4/d9d/namespaceestimators_1_1cf.html',1,'estimators']]]
+  ['documentation_0',['Documentation',['../index.html#documentation',1,'']]],
+  ['dt_1',['dt',['../dc/da4/classestimators_1_1cf_1_1_c_f.html#a35441d10d97c64c8938beb8e7b4e9bbd',1,'estimators::cf::CF']]]
 ];

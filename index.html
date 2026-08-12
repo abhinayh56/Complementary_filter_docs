@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Complementary Filter: Main Page</title>
+<title>Complementary Filter: Complementary Filter Library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -115,10 +115,124 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Complementary Filter Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Complementary Filter Library </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><h1 class="doxsection"><a class="anchor" id="intro"></a>
+Introduction</h1>
+<p>This library provides a generic implementation of a first-order complementary filter for sensor fusion.</p>
+<p>A complementary filter combines measurements from different sensors by exploiting their complementary frequency characteristics. A low-frequency measurement from one sensor can be combined with a high-frequency measurement from another sensor to obtain a more stable estimate.</p>
+<p>The library provides a templated <a class="el" href="dc/da4/classestimators_1_1cf_1_1_c_f.html" title="estimators::cf::CF">estimators::cf::CF</a> class that supports different numeric types such as <code>float</code> and <code>double</code>.</p>
+<h1 class="doxsection"><a class="anchor" id="features"></a>
+Features</h1>
+<p>The complementary filter library provides:</p>
+<ul>
+<li>First-order complementary filtering.</li>
+<li>Fusion of two sensor measurements.</li>
+<li>Configurable cutoff frequency.</li>
+<li>Configurable sampling time.</li>
+<li>Configurable filter time constant.</li>
+<li>Configurable complementary filter coefficient.</li>
+<li>Runtime parameter modification.</li>
+<li>Filter state reset functionality.</li>
+<li>Getter functions for filter parameters.</li>
+<li>Support for different numeric data types through templates.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="usage"></a>
+Basic Usage</h1>
+<p>A complementary filter can be created and initialized using a cutoff frequency and sampling time:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="d7/d41/cf_8h.html">cf.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="dc/da4/classestimators_1_1cf_1_1_c_f.html">estimators::cf::CF&lt;double&gt;</a> filter;</div>
+<div class="line"> </div>
+<div class="line">filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a14bd70ca761ec738b91c0741adc82e25">init</a>(2.5, 0.006);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">double</span> output = filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a132213434f27db6c900bfbda44a6b421">update</a>(x1, x2);</div>
+<div class="ttc" id="acf_8h_html"><div class="ttname"><a href="d7/d41/cf_8h.html">cf.h</a></div><div class="ttdoc">Declaration of the complementary filter class.</div></div>
+<div class="ttc" id="aclassestimators_1_1cf_1_1_c_f_html"><div class="ttname"><a href="dc/da4/classestimators_1_1cf_1_1_c_f.html">estimators::cf::CF</a></div><div class="ttdoc">Generic complementary filter for sensor fusion.</div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00069">cf.h:70</a></div></div>
+<div class="ttc" id="aclassestimators_1_1cf_1_1_c_f_html_a132213434f27db6c900bfbda44a6b421"><div class="ttname"><a href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a132213434f27db6c900bfbda44a6b421">estimators::cf::CF::update</a></div><div class="ttdeci">T update(T x1_i, T x2_i)</div><div class="ttdoc">Updates the complementary filter with new measurements.</div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00030">cf.h:30</a></div></div>
+<div class="ttc" id="aclassestimators_1_1cf_1_1_c_f_html_a14bd70ca761ec738b91c0741adc82e25"><div class="ttname"><a href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a14bd70ca761ec738b91c0741adc82e25">estimators::cf::CF::init</a></div><div class="ttdeci">void init(T fc_, T dt_)</div><div class="ttdoc">Initializes the complementary filter.</div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00015">cf.h:15</a></div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="parameters"></a>
+Filter Parameters</h1>
+<p>The filter can be configured using the following parameters:</p>
+<ul>
+<li><code>fc</code> : Cutoff frequency of the filter.</li>
+<li><code>tau</code> : Time constant of the filter.</li>
+<li><code>dt</code> : Sampling time or control-loop period.</li>
+<li><code>alpha:</code> Complementary filter coefficient.</li>
+</ul>
+<p>The parameters can be configured during initialization or individually using the corresponding setter functions.</p>
+<h1 class="doxsection"><a class="anchor" id="configuration"></a>
+Parameter Configuration</h1>
+<p>The filter can be initialized using:</p>
+<div class="fragment"><div class="line">filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a14bd70ca761ec738b91c0741adc82e25">init</a>(fc, dt);</div>
+</div><!-- fragment --><p>Alternatively, individual parameters can be configured using:</p>
+<div class="fragment"><div class="line">filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a528d026c8354faf6a42bdb4dffaa15fe">set_fc</a>(fc);</div>
+<div class="line">filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#af117cecc64571370751a762ee21576ab">set_tau</a>(tau);</div>
+<div class="line">filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#aa91caa6e98279009114e53711e0d8640">set_dt</a>(dt);</div>
+<div class="line">filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a773714b26cec336c76de1091559cf669">set_alpha</a>(alpha);</div>
+<div class="ttc" id="aclassestimators_1_1cf_1_1_c_f_html_a528d026c8354faf6a42bdb4dffaa15fe"><div class="ttname"><a href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a528d026c8354faf6a42bdb4dffaa15fe">estimators::cf::CF::set_fc</a></div><div class="ttdeci">void set_fc(T fc_)</div><div class="ttdoc">Sets the cutoff frequency.</div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00041">cf.h:41</a></div></div>
+<div class="ttc" id="aclassestimators_1_1cf_1_1_c_f_html_a773714b26cec336c76de1091559cf669"><div class="ttname"><a href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a773714b26cec336c76de1091559cf669">estimators::cf::CF::set_alpha</a></div><div class="ttdeci">void set_alpha(T alpha_)</div><div class="ttdoc">Sets the complementary filter coefficient.</div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00061">cf.h:61</a></div></div>
+<div class="ttc" id="aclassestimators_1_1cf_1_1_c_f_html_aa91caa6e98279009114e53711e0d8640"><div class="ttname"><a href="dc/da4/classestimators_1_1cf_1_1_c_f.html#aa91caa6e98279009114e53711e0d8640">estimators::cf::CF::set_dt</a></div><div class="ttdeci">void set_dt(T dt_)</div><div class="ttdoc">Sets the sampling time.</div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00055">cf.h:55</a></div></div>
+<div class="ttc" id="aclassestimators_1_1cf_1_1_c_f_html_af117cecc64571370751a762ee21576ab"><div class="ttname"><a href="dc/da4/classestimators_1_1cf_1_1_c_f.html#af117cecc64571370751a762ee21576ab">estimators::cf::CF::set_tau</a></div><div class="ttdeci">void set_tau(T tau_)</div><div class="ttdoc">Sets the filter time constant.</div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00047">cf.h:47</a></div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="update"></a>
+Updating the Filter</h1>
+<p>New sensor measurements are provided to the filter using the <a class="el" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a132213434f27db6c900bfbda44a6b421" title="estimators::cf::CF::update">estimators::cf::CF::update</a> function:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">double</span> output = filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a132213434f27db6c900bfbda44a6b421">update</a>(x1, x2);</div>
+</div><!-- fragment --><p>The two input measurements are combined according to the configured complementary filter parameters, and the filtered output is returned.</p>
+<h1 class="doxsection"><a class="anchor" id="reset"></a>
+Resetting the Filter</h1>
+<p>The internal filter state can be reset using:</p>
+<div class="fragment"><div class="line">filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a87486f9d50bd8e271470e235652b1385">reset</a>();</div>
+<div class="ttc" id="aclassestimators_1_1cf_1_1_c_f_html_a87486f9d50bd8e271470e235652b1385"><div class="ttname"><a href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a87486f9d50bd8e271470e235652b1385">estimators::cf::CF::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Resets the filter state.</div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00036">cf.h:36</a></div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="access"></a>
+Accessing Parameters</h1>
+<p>The current filter parameters can be obtained using:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">double</span> fc    = filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#affded7eba4995b1539d8063011e7891f">get_fc</a>();</div>
+<div class="line"><span class="keywordtype">double</span> tau   = filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#ad6f0d07e6f90f3581017fa10201ea595">get_tau</a>();</div>
+<div class="line"><span class="keywordtype">double</span> dt    = filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#ae6b29e24d3b616b041dcb891a3cb5407">get_dt</a>();</div>
+<div class="line"><span class="keywordtype">double</span> alpha = filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#aed9d82342fb263c95a908e8da463d54a">get_alpha</a>();</div>
+<div class="ttc" id="aclassestimators_1_1cf_1_1_c_f_html_ad6f0d07e6f90f3581017fa10201ea595"><div class="ttname"><a href="dc/da4/classestimators_1_1cf_1_1_c_f.html#ad6f0d07e6f90f3581017fa10201ea595">estimators::cf::CF::get_tau</a></div><div class="ttdeci">T get_tau()</div><div class="ttdoc">Gets the filter time constant.</div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00075">cf.h:75</a></div></div>
+<div class="ttc" id="aclassestimators_1_1cf_1_1_c_f_html_ae6b29e24d3b616b041dcb891a3cb5407"><div class="ttname"><a href="dc/da4/classestimators_1_1cf_1_1_c_f.html#ae6b29e24d3b616b041dcb891a3cb5407">estimators::cf::CF::get_dt</a></div><div class="ttdeci">T get_dt()</div><div class="ttdoc">Gets the sampling time.</div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00081">cf.h:81</a></div></div>
+<div class="ttc" id="aclassestimators_1_1cf_1_1_c_f_html_aed9d82342fb263c95a908e8da463d54a"><div class="ttname"><a href="dc/da4/classestimators_1_1cf_1_1_c_f.html#aed9d82342fb263c95a908e8da463d54a">estimators::cf::CF::get_alpha</a></div><div class="ttdeci">T get_alpha()</div><div class="ttdoc">Gets the complementary filter coefficient.</div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00087">cf.h:87</a></div></div>
+<div class="ttc" id="aclassestimators_1_1cf_1_1_c_f_html_affded7eba4995b1539d8063011e7891f"><div class="ttname"><a href="dc/da4/classestimators_1_1cf_1_1_c_f.html#affded7eba4995b1539d8063011e7891f">estimators::cf::CF::get_fc</a></div><div class="ttdeci">T get_fc()</div><div class="ttdoc">Gets the cutoff frequency.</div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00069">cf.h:69</a></div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="classes"></a>
+Main Class</h1>
+<p>The main class provided by this library is:</p>
+<ul>
+<li><a class="el" href="dc/da4/classestimators_1_1cf_1_1_c_f.html" title="estimators::cf::CF">estimators::cf::CF</a> - Generic complementary filter for sensor fusion.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="namespace"></a>
+Namespace</h1>
+<p>The complementary filter implementation is contained in:</p>
+<div class="fragment"><div class="line"><a class="code hl_namespace" href="d4/d9d/namespaceestimators_1_1cf.html">estimators::cf</a></div>
+<div class="ttc" id="anamespaceestimators_1_1cf_html"><div class="ttname"><a href="d4/d9d/namespaceestimators_1_1cf.html">estimators::cf</a></div><div class="ttdef"><b>Definition</b> <a href="d7/d41/cf_8h_source.html#l00036">cf.h:37</a></div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="example"></a>
+Complete Example</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="d7/d41/cf_8h.html">cf.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main()</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_class" href="dc/da4/classestimators_1_1cf_1_1_c_f.html">estimators::cf::CF&lt;double&gt;</a> filter;</div>
+<div class="line"> </div>
+<div class="line">    filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a14bd70ca761ec738b91c0741adc82e25">init</a>(2.5, 0.006);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">double</span> x1 = 10.0;</div>
+<div class="line">    <span class="keywordtype">double</span> x2 = 10.5;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">double</span> output = filter.<a class="code hl_function" href="dc/da4/classestimators_1_1cf_1_1_c_f.html#a132213434f27db6c900bfbda44a6b421">update</a>(x1, x2);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="documentation"></a>
+Documentation</h1>
+<p>Detailed documentation for the complementary filter class and its member functions is available through the <a class="el" href="dc/da4/classestimators_1_1cf_1_1_c_f.html" title="estimators::cf::CF">estimators::cf::CF</a> class reference.</p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 Abhinay Kumar</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Abhinay Kumar </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026-08-11 </dd></dl>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->
