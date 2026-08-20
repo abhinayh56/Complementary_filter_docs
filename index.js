@@ -11,5 +11,5 @@ var index =
     [ "Main Class", "index.html#classes", null ],
     [ "Namespace", "index.html#namespace", null ],
     [ "Complete Example", "index.html#example", null ],
-    [ "Documentation", "index.html#documentation", null ]
+    [ "Detailed Documentation", "index.html#documentation", null ]
 ];
